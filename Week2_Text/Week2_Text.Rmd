@@ -1,0 +1,52 @@
+---
+title: "The Air Quality Dataset"
+author: "Johnson W. Ahiadorme"
+date: "6/12/2019"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Summary of Air Quality Dataset
+
+This exercise will be working with the built-in ```air quality``` dataset.^[ Chambers, J. M., Cleveland, W. S., Kleiner, B. and Tukey, P. A. (1983) Graphical Methods for Data Analysis. Belmont, CA: Wadsworth.] This dataset contains 154 daily air quality measurements in New York from May 1, 1973 (a Tuesday) to September 30, 1973. The dataset contains 6 variables:
+
+- **Ozone**: Mean ozone in parts per billion _(ppb)_ from 1300 to 1500 hours at Roosevelt Island;
+- **Solar.R**: Solar radiation in Langleys _(lang)_ in the frequency band 4000–7700 Angstroms from 0800 to 1200 hours at Central Park;
+- **Wind**: Average wind speed in miles per hour _(mph)_ at 0700 and 1000 hours at LaGuardia Airport;
+- **Temp**: Maximum daily temperature in degrees Fahrenheit _(oF)_ at LaGuardia Airport;
+- **Month**: numeric month _(1-12)_
+**Day**: numeric Day of the month _(1-31)_
+
+Here is a summary of the data
+
+
+```{r airquality}
+summary(airquality)
+```
+
+### Table of Top of the Air Quality Dataset
+
+A table of the head of the air quality dataset 
+
+```{r}
+knitr::kable(head(airquality),
+             caption = "Top of the Air Quality 
+             Dataset")
+```
+
+### Plot of Ozone by Temperature –Air Quality Dataset
+
+A plot of the temperature and ozone from the built-in air quality dataset 
+
+```{r}
+plot(airquality$Temp, airquality$Ozone, 
+     main = "Airquality: Ozone by Temperature")
+```
+
+
+
